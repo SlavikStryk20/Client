@@ -1,0 +1,41 @@
+﻿<Window x:Class="Client.Reg_Log"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="Reg_Log" MaxHeight="580" MaxWidth="296" MinHeight="580" MinWidth="296" Height="580" Width="296" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="172*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="189*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="horizontal" Background="red">
+            <Image HorizontalAlignment="center" Stretch="Fill" Source="D:\Imagine\nova_logo.png" Height="173"/>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Text="Реєстрація" FontSize="20" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="0,11,0,10" Height="27"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Телефон" VerticalAlignment="Center"/>
+            <TextBlock Text="+38 " Foreground="Gray" Margin="10,4,0,0"/>
+            <TextBox x:Name="num" TextChanged="num_TextChanged" Width="200" BorderThickness="0" Margin="0,4,0,0"/>
+        </StackPanel>
+        <Separator Grid.Row="2" Grid.RowSpan="2" Foreground="Gray" Margin="9,2"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Пароль" VerticalAlignment="Center"/>
+            <TextBlock Text="" Foreground="Gray" Margin="10,4,0,0"/>
+            <TextBox x:Name="pass"  TextChanged="pass_TextChanged" Width="200" BorderThickness="0" Margin="0,4,0,0" Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        </StackPanel>
+        <Button Click="Button_Click" Grid.Row="4" Background="Red" BorderThickness="0" Content="Зареєструватися" FontSize="17" Foreground="White"/>
+        <TextBlock Grid.Row="5" Text="Натискаючи кнопку Зареєструватися, я погоджуються з" Foreground="Gray" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="13" Margin="16,0" Width="256"/>
+        <TextBlock Grid.Row="6" Text="правилами сервісу" Foreground="Red" FontStyle="Italic" FontSize="10" HorizontalAlignment="Center" Margin="102,0" VerticalAlignment="Top" Height="13" Width="84"/>
+    
+    </Grid>
+</Window>
